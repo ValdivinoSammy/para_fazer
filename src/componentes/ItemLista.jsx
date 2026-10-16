@@ -19,11 +19,12 @@ function ItemLista(props) {
         <li >
             <Card className={props.item.feito ? "list-card check" : "list-card"}>
                 {props.item.text}
-                <div className="flex">
+                
+            </Card>
+            <div className="flex">
                     <button onClick={() => { props.checkedDone(props.item) }}><FeitoImg feito={props.item.feito} /></button>
                     <button onClick={() => { props.deleteInList(props.item) }}><img alt='delete' src={iconLixo} /></button>
-                </div>
-            </Card>
+            </div>
         </li>
     )
 }

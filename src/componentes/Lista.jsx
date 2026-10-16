@@ -1,12 +1,9 @@
-import { useState } from 'react';
-import ItemLista from './ItemLista';
+import TipoDeLista from './TipoDeLista';
 
 
 function Lista(props) {
     return (
-        <ul>
-            {props.itens.map(item => <ItemLista key={item.id} item={item} deleteInList={props.deleteInList} checkedDone={props.checkedDone} />)}
-        </ul>
+        <TipoDeLista itens={props.itens} parafazer={props.parafazer} feitos={props.feitos} deleteInList={props.deleteInList} checkedDone={props.checkedDone} />
     )
 }
 
