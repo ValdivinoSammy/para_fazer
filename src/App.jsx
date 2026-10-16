@@ -43,6 +43,7 @@ function App() {
     function checkedDone(item) {
         let newItens = itens.map(it => it.id === item.id ? { ...it, feito: !it.feito } : it)
         setItens(newItens)
+        if(formPF) setFormPF(!formPF);
     }
 
     function clickBtnOptions(qbtnc) {
@@ -53,13 +54,17 @@ function App() {
         };
 
         if (qbtnc === "Parafazer") {
-            setFeitos(false);
+            if (itens.length === 0) return;
+            setFeitos(false); 
             setParafazer(true);
-        };
+            };
+
         if (qbtnc === "Feitos") {
+            if (itens.length === 0) return;
             setParafazer(false);
             setFeitos(true);
-        }
+            };
+
         if (qbtnc === "Todos") {
             setParafazer(false);
             setFeitos(false);
@@ -68,7 +73,7 @@ function App() {
 
     return (
         <>
-            <header><h1>PARA FAZER</h1></header>
+            <header><h1>Afazeres</h1></header>
             <div id='container'>
                 {!formPF && <BtnOptions parafazer={parafazer} feitos={feitos} clickBtnOptions={clickBtnOptions} />}
                 {formPF && <Formulario addTextInList={addTextInList} comeBack={clickBtnOptions} />}
