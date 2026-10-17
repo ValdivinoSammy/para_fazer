@@ -147,9 +147,9 @@ ul {
     overflow-y: scroll;
     scrollbar-width: none;
 
-    background-color: #d384e7;
+    background-color: #444;
     border-radius: 10px;
-    border: 2px solid white;
+    border: 2px solid #e2a9f1;
 }
 
 li {
@@ -205,5 +205,5 @@ li {
 h2 {
     text-align: center;
     margin-top: 10px;
-    color: #222;
+    color: #1b1b1b;
 }
